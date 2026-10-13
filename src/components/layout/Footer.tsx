@@ -98,9 +98,9 @@ export default function Footer() {
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[10px] uppercase tracking-[0.4em] font-black text-slate-500">
           <p>© 2026 SUAREZ SERVICES & ADVISORY. {tr('ALL RIGHTS RESERVED.', 'TODOS LOS DERECHOS RESERVADOS.')}</p>
           <div className="flex space-x-10 mt-6 md:mt-0">
-            {[tr('Privacy', 'Privacidad'), tr('Terms', 'Términos'), tr('Cookies', 'Cookies')].map((item, idx) => (
-              <Link key={idx} href="#" className="hover:text-accent-gold transition-colors">{item}</Link>
-            ))}
+            <Link href="/privacidad" className="hover:text-accent-gold transition-colors">{tr('Privacy', 'Privacidad')}</Link>
+            <Link href="/terminos" className="hover:text-accent-gold transition-colors">{tr('Terms', 'Términos')}</Link>
+            <Link href="/cookies" className="hover:text-accent-gold transition-colors">{tr('Cookies', 'Cookies')}</Link>
           </div>
         </div>
       </div>
