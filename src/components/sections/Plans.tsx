@@ -131,8 +131,8 @@ export default function Plans() {
   const tr = t[lang]
 
   return (
-    <section id="planes" className="py-24 bg-primary text-white relative overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 blur-[120px] rounded-full" />
+    <section id="planes" className="py-24 bg-slate-950 text-white relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent-gold/5 blur-[120px] rounded-full" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -142,11 +142,11 @@ export default function Plans() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-accent font-black tracking-[0.2em] uppercase text-xs mb-4">{tr.label}</h2>
+          <h2 className="text-accent-gold font-black tracking-[0.2em] uppercase text-xs mb-4">{tr.label}</h2>
           <h3 className="text-4xl md:text-6xl font-black leading-[1.1] tracking-tighter mb-6">
-            {tr.title1} <span className="text-accent">{tr.title2}</span>
+            {tr.title1} <span className="text-gradient-gold">{tr.title2}</span>
           </h3>
-          <p className="text-emerald-100/60 text-lg max-w-3xl mx-auto font-medium leading-relaxed">
+          <p className="text-slate-300 text-lg max-w-3xl mx-auto font-medium leading-relaxed">
             {tr.subtitle}
           </p>
         </motion.div>
@@ -161,29 +161,29 @@ export default function Plans() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className={`relative rounded-3xl p-8 border ${
                 plan.featured
-                  ? 'bg-gradient-to-b from-accent/20 to-white/5 border-accent shadow-[0_0_60px_rgba(16,185,129,0.3)] md:-translate-y-4'
-                  : 'bg-white/5 border-white/10 hover:border-accent/40'
+                  ? 'bg-gradient-to-b from-accent-gold/20 to-white/5 border-accent-gold shadow-[0_0_60px_rgba(201,162,39,0.3)] md:-translate-y-4'
+                  : 'glass-card hover:border-accent-gold/40'
               } transition-all`}
             >
               {plan.featured && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-gold text-slate-950 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">
                   {tr.mostPopular}
                 </div>
               )}
 
               <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${
-                plan.featured ? 'bg-accent text-white' : 'bg-accent/10 text-accent'
+                plan.featured ? 'bg-accent-gold text-slate-950' : 'bg-accent-gold/10 text-accent-gold'
               }`}>
                 {plan.icon}
               </div>
 
               <h4 className="text-2xl font-black mb-1">{plan.name[lang]}</h4>
-              <p className="text-emerald-100/50 text-sm font-bold uppercase tracking-widest mb-6">{plan.tagline[lang]}</p>
+              <p className="text-slate-400 text-sm font-bold uppercase tracking-widest mb-6">{plan.tagline[lang]}</p>
 
               <ul className="space-y-3 mb-8">
                 {plan.features[lang].map((f, j) => (
-                  <li key={j} className="flex items-start gap-3 text-sm font-medium text-emerald-50/80">
-                    <Check className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                  <li key={j} className="flex items-start gap-3 text-sm font-medium text-slate-300">
+                    <Check className="w-4 h-4 text-accent-gold flex-shrink-0 mt-0.5" />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -195,8 +195,8 @@ export default function Plans() {
                 rel="noopener noreferrer"
                 className={`w-full py-4 rounded-xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all ${
                   plan.featured
-                    ? 'bg-accent text-white hover:bg-emerald-600 shadow-lg shadow-accent/40'
-                    : 'bg-white/10 text-white hover:bg-accent'
+                    ? 'bg-accent-gold text-slate-950 hover:bg-yellow-500 shadow-lg shadow-accent-gold/30'
+                    : 'bg-white/5 text-white hover:bg-accent-gold hover:text-slate-950'
                 }`}
               >
                 {tr.requestQuote}
@@ -212,15 +212,15 @@ export default function Plans() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 text-center bg-white/5 border border-white/10 rounded-3xl p-10 backdrop-blur-xl"
+          className="mt-16 text-center glass-card p-10"
         >
           <h4 className="text-2xl md:text-3xl font-black mb-3">{tr.customTitle}</h4>
-          <p className="text-emerald-100/60 font-medium mb-8 max-w-2xl mx-auto">{tr.customDesc}</p>
+          <p className="text-slate-400 font-medium mb-8 max-w-2xl mx-auto">{tr.customDesc}</p>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-black hover:bg-emerald-600 transition-all shadow-2xl shadow-accent/40"
+            className="inline-flex items-center gap-2 bg-accent-gold text-slate-950 px-8 py-4 rounded-xl font-black hover:bg-yellow-500 transition-all shadow-2xl shadow-accent-gold/30"
           >
             <MessageCircle className="w-5 h-5" />
             {tr.customBtn}

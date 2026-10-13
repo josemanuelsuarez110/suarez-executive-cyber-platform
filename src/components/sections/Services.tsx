@@ -210,12 +210,12 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="flex items-center gap-4 mb-10"
         >
-          <div className="text-accent bg-accent/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border border-accent/30">
+          <div className="text-accent-gold bg-accent-gold/10 w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 border border-accent-gold/30">
             {cat.icon}
           </div>
           <div>
-            <h4 className="text-2xl md:text-3xl font-black text-primary tracking-tight">{cat.title}</h4>
-            <p className="text-emerald-950/60 font-medium text-sm md:text-base mt-1">{cat.desc}</p>
+            <h4 className="text-2xl md:text-3xl font-black text-white tracking-tight">{cat.title}</h4>
+            <p className="text-slate-400 font-medium text-sm md:text-base mt-1">{cat.desc}</p>
           </div>
         </motion.div>
 
@@ -227,17 +227,17 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group bg-white border border-emerald-100 rounded-3xl p-7 hover:shadow-[0_30px_80px_rgba(6,78,59,0.15)] hover:border-accent/40 transition-all flex flex-col"
+              className="group glass-card p-7 hover:shadow-[0_30px_80px_rgba(201,162,39,0.15)] hover:border-accent-gold/40 transition-all flex flex-col"
             >
-              <div className="text-accent bg-emerald-50 w-14 h-14 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
+              <div className="text-accent-gold bg-accent-gold/10 w-14 h-14 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-accent-gold group-hover:text-slate-950 transition-all flex-shrink-0 border border-accent-gold/20">
                 {s.icon}
               </div>
-              <h5 className="text-lg font-black text-primary mb-2 tracking-tight leading-tight">{s.title[lang]}</h5>
-              <p className="text-emerald-950/60 font-medium text-sm mb-5 leading-relaxed flex-1">{s.desc[lang]}</p>
+              <h5 className="text-lg font-bold text-white mb-2 tracking-tight leading-tight">{s.title[lang]}</h5>
+              <p className="text-slate-400 font-medium text-sm mb-5 leading-relaxed flex-1">{s.desc[lang]}</p>
               <ul className="space-y-2 mb-6">
                 {s.features[lang].map((f, j) => (
-                  <li key={j} className="flex items-start gap-2 text-xs font-bold text-emerald-900/70">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0 mt-0.5" />
+                  <li key={j} className="flex items-start gap-2 text-xs font-bold text-slate-400">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-accent-gold flex-shrink-0 mt-0.5" />
                     {f}
                   </li>
                 ))}
@@ -246,7 +246,7 @@ export default function Services() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-auto inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-accent hover:gap-3 transition-all"
+                className="mt-auto inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-accent-gold hover:gap-3 transition-all"
               >
                 {tr.requestQuote}
                 <ChevronRight className="w-4 h-4" />
@@ -259,9 +259,9 @@ export default function Services() {
   }
 
   return (
-    <section id="servicios" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-50 blur-[120px] rounded-full" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-50 blur-[120px] rounded-full" />
+    <section id="servicios" className="py-24 bg-slate-950 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-corporate-blue/20 blur-[120px] rounded-full" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-corporate-blue/20 blur-[120px] rounded-full" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -271,11 +271,11 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-accent font-black tracking-[0.2em] uppercase text-xs mb-4">{tr.label}</h2>
-          <h3 className="text-4xl md:text-6xl font-black text-primary leading-[1.1] tracking-tighter mb-6">
-            {tr.title1} <span className="text-emerald-500">{tr.title2}</span>
+          <h2 className="text-accent-gold font-black tracking-[0.2em] uppercase text-xs mb-4">{tr.label}</h2>
+          <h3 className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter mb-6">
+            {tr.title1} <span className="text-gradient-gold">{tr.title2}</span>
           </h3>
-          <p className="text-emerald-950/60 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
+          <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
             {tr.subtitle}
           </p>
         </motion.div>
@@ -290,12 +290,12 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-12 text-center bg-gradient-to-r from-emerald-50 via-white to-emerald-50 border border-emerald-100 rounded-3xl p-10 md:p-12"
+          className="mt-12 text-center glass-card p-10 md:p-12"
         >
-          <h4 className="text-2xl md:text-3xl font-black text-primary mb-3">
+          <h4 className="text-2xl md:text-3xl font-black text-white mb-3">
             {lang === 'en' ? 'Need something specific?' : '¿Necesitas algo específico?'}
           </h4>
-          <p className="text-emerald-950/60 font-medium mb-8 max-w-2xl mx-auto">
+          <p className="text-slate-400 font-medium mb-8 max-w-2xl mx-auto">
             {lang === 'en'
               ? 'Every business is different. Let\'s discuss your needs and build a custom proposal.'
               : 'Cada negocio es diferente. Conversemos sobre tus necesidades y armamos una propuesta personalizada.'}
@@ -305,14 +305,14 @@ export default function Services() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent text-white px-8 py-4 rounded-xl font-black flex items-center justify-center gap-2 hover:bg-emerald-600 transition-all shadow-2xl shadow-accent/40"
+              className="bg-accent-gold text-slate-950 px-8 py-4 rounded-xl font-black flex items-center justify-center gap-2 hover:bg-yellow-500 transition-all shadow-2xl shadow-accent-gold/30"
             >
               <MessageCircle className="w-5 h-5" />
               {tr.talkWhatsApp}
             </a>
             <a
               href="mailto:josemanuelsuarez110@gmail.com"
-              className="bg-white border-2 border-emerald-100 text-primary px-8 py-4 rounded-xl font-black hover:border-accent hover:bg-emerald-50 transition-all flex items-center justify-center"
+              className="glass-card text-white px-8 py-4 rounded-xl font-black hover:bg-white/10 transition-all flex items-center justify-center"
             >
               josemanuelsuarez110@gmail.com
             </a>
