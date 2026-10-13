@@ -7,38 +7,69 @@ import { Briefcase, Calendar, MapPin, CheckCircle2, TrendingUp, ExternalLink, Aw
 const experiences = [
   {
     role: 'QA Automation Engineer / SDET',
-    company: 'JMTechLab · Proyectos de ingeniería y clientes',
-    period: '2023 — Presente',
-    location: 'Remoto · República Dominicana',
+    company: 'JMTechLab · Profesional independiente',
+    period: 'Nov 2025 — Presente',
+    location: 'Remoto',
     current: true,
-    summary: 'QA Automation Engineer / SDET con más de 3 años de experiencia profesional abarcando test automation, pruebas web y API, regresión, integración y validación end-to-end.',
+    summary: 'Building production-grade QA automation and software engineering projects focused on test automation, API validation, CI/CD and secure software development.',
     bullets: [
-      'Diseño y mantengo escenarios de pruebas automatizadas con Playwright y Selenium para aplicaciones web (E2E, regresión e integración).',
-      'Valido REST APIs con Postman y pruebas automatizadas, incluyendo autenticación, autorización basada en roles (RBAC) y casos de borde.',
-      'Ejecuto verificación a nivel de base de datos con SQL y PostgreSQL, incluyendo Row-Level Security (RLS) para validar integridad y controles.',
-      'Integro pruebas automatizadas en pipelines CI/CD con GitHub Actions, implementando quality gates y ejecución programada.',
-      'Desarrollo pruebas y utilidades en JavaScript, TypeScript y Python (FastAPI) para ampliar cobertura y reducir esfuerzo manual.',
-      'Realizo pruebas funcionales, de integración y de regresión, documentando defectos y colaborando con desarrollo para reproducir y validar fixes.',
-      'Aplico testing de seguridad en aplicaciones y APIs: OWASP Top 10, validación de autenticación y regresión de seguridad.',
-      'Trabajo con metodologías Agile/Scrum usando Jira para gestión de tickets, sprint planning y trazabilidad de defectos.',
-      'Exploro AI-assisted QA engineering para generar casos de prueba, priorizar escenarios y optimizar mantenimiento de suites.'
+      'Built QA Sentinel, a full-stack SDET platform demonstrating Playwright E2E automation, API testing and CI/CD quality gates.',
+      'Developed automated testing and RBAC validation for an enterprise audit and risk-management platform.',
+      'Built QAForge AI, combining QA automation workflows, Playwright, FastAPI, Python and AI-assisted engineering.',
+      'Implemented and verified a Zero Trust financial API using JWT authentication, PostgreSQL Row-Level Security and automated authorization testing.',
+      'Integrated GitHub Actions quality gates, dependency auditing, secret scanning and production verification into engineering workflows.'
     ],
-    tech: ['Playwright', 'Selenium', 'Postman', 'SDET', 'API Testing', 'E2E Testing', 'Automated Testing', 'JavaScript', 'TypeScript', 'Python', 'FastAPI', 'SQL', 'PostgreSQL', 'CI/CD', 'GitHub Actions', 'Docker', 'Git', 'Linux', 'Jira', 'Agile/Scrum', 'Security Testing', 'OWASP', 'Regression Testing', 'Integration Testing']
+    tech: ['Playwright', 'TypeScript', 'JavaScript', 'Python', 'FastAPI', 'Next.js', 'React', 'PostgreSQL', 'Supabase', 'Neon', 'Express', 'Jest', 'GitHub Actions', 'Linux', 'SDET', 'API Testing', 'E2E Testing', 'CI/CD', 'Security Testing', 'OWASP']
   },
   {
-    role: 'Analista de Sistemas / Tesorería',
-    company: 'Institución financiera',
-    period: '2020 — 2023',
+    role: 'QA Analyst',
+    company: 'SIMELER INTERNATIONAL',
+    period: 'Nov 2022 — Dic 2025',
+    location: 'Santo Domingo, RD · Remoto',
+    current: false,
+    summary: 'Manual and automated software testing across web applications and APIs within Agile/Scrum development environments.',
+    bullets: [
+      'Performed manual and automated software testing across web applications and APIs within Agile/Scrum development environments.',
+      'Designed, developed and maintained automated test scenarios using Playwright and Selenium.',
+      'Executed REST API testing and validation using Postman.',
+      'Performed functional, regression, integration and end-to-end testing throughout the software development lifecycle.',
+      'Used SQL to validate application data and investigate discrepancies between frontend, API and database behavior.',
+      'Worked with JavaScript and Python in test automation and supporting QA workflows.',
+      'Participated in CI/CD-based quality processes and used Git for version control and collaborative development.',
+      'Tracked defects, test activities and development workflows using Jira.',
+      'Collaborated with developers and other team members to reproduce defects, validate fixes and improve software quality.'
+    ],
+    tech: ['Playwright', 'Selenium', 'Postman', 'JavaScript', 'Python', 'SQL', 'Git', 'Jira', 'CI/CD', 'Agile/Scrum', 'API Testing', 'Regression Testing', 'Integration Testing', 'E2E Testing', 'Functional Testing']
+  },
+  {
+    role: 'Administrador Tesorero',
+    company: 'Liga Municipal Dominicana',
+    period: 'Abr 2020 — Ago 2026',
     location: 'República Dominicana',
     current: false,
-    summary: 'Analista de sistemas con enfoque en controles de acceso, integridad de datos financieros y auditoría institucional.',
+    summary: 'Gestión administrativa y de tesorería en institución pública, con énfasis en controles internos, auditoría y sistemas de información financiera.',
     bullets: [
-      'Gestioné sistemas de información institucional con foco en controles de acceso, trazabilidad y auditoría.',
-      'Apliqué conocimientos contables y de tesorería para validar integridad de datos financieros y consistencia transaccional.',
-      'Coordiné la implementación de controles internos y reportes para auditoría.',
-      'Colaboré con equipos multidisciplinarios en digitalización, mejora de procesos y adopción de buenas prácticas.'
+      'Gestión administrativa y de tesorería en institución pública con foco en controles internos y trazabilidad.',
+      'Administración de sistemas de información financiera y validación de integridad de datos.',
+      'Coordinación de reportes para auditoría y cumplimiento normativo.',
+      'Colaboración con equipos multidisciplinarios en digitalización y mejora de procesos.'
     ],
-    tech: ['SQL', 'PostgreSQL', 'Excel Avanzado', 'ERP', 'Auditoría', 'Contabilidad', 'Controles Internos']
+    tech: ['SQL', 'Excel Avanzado', 'ERP', 'Auditoría', 'Contabilidad', 'Controles Internos', 'Tesorería']
+  },
+  {
+    role: 'Gerente de Área',
+    company: 'Empresas P & aB',
+    period: 'Oct 2014 — Feb 2019',
+    location: 'República Dominicana',
+    current: false,
+    summary: 'Gestión de área operativa con enfoque en procesos administrativos, control de recursos y liderazgo de equipos.',
+    bullets: [
+      'Gestión y supervisión de operaciones del área asignada.',
+      'Control de recursos, presupuestos y reportes de gestión.',
+      'Liderazgo de equipos y coordinación de procesos administrativos.',
+      'Implementación de mejoras operativas y seguimiento de indicadores.'
+    ],
+    tech: ['Gestión de Equipos', 'Administración', 'Presupuestos', 'Reportes', 'Excel Avanzado']
   }
 ]
 
@@ -59,8 +90,8 @@ export default function Experience() {
             Experiencia <span className="text-emerald-500">Profesional</span>
           </h3>
           <p className="text-emerald-950/60 text-lg max-w-3xl mx-auto font-medium leading-relaxed">
-            Más de 3 años de experiencia profesional en QA, automatización, validación de APIs,
-            verificación SQL y testing de seguridad en entornos críticos.
+            Más de 10 años de trayectoria profesional combinando QA Automation, ingeniería de software,
+            administración y gestión en entornos públicos y privados.
           </p>
         </motion.div>
 
@@ -140,7 +171,7 @@ export default function Experience() {
               <div className="text-center md:text-left">
                 <p className="font-black text-primary text-lg">Portafolio de ingeniería</p>
                 <p className="text-emerald-900/60 text-sm font-medium">
-                  Proyectos de QA automation, API testing, CI/CD quality gates y seguridad
+                  QA Sentinel · QAForge AI · Zero Trust API · Enterprise Audit Platform
                 </p>
               </div>
               <a
