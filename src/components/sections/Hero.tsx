@@ -6,6 +6,7 @@ import {
   ChevronRight, ShieldCheck, Bug, Terminal, GitBranch, Lock,
   Award, Linkedin, Github, Mail, MapPin, Briefcase, Code, Database, Cpu, Phone, MessageCircle
 } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const STACK_TAGS = [
   'SDET', 'API Testing', 'E2E Testing', 'Automated Testing',
@@ -15,7 +16,57 @@ const STACK_TAGS = [
   'Security Testing', 'OWASP'
 ]
 
+const t = {
+  en: {
+    badge: 'QA Automation Engineer / SDET',
+    role: 'Information Systems Engineer',
+    location: 'Azua, Dominican Republic · Remote',
+    role2: 'QA Automation Engineer / SDET &',
+    role3: 'Information Systems Engineer',
+    desc: 'Over 3 years of professional QA experience spanning automation, web and API testing, regression, integration, and end-to-end validation. I design and maintain automated test scenarios with Playwright, Selenium and Postman, validate REST APIs, perform database-level verification with SQL, and collaborate with development teams to reproduce and resolve defects.',
+    years: 'Years QA',
+    certs: 'Certifications',
+    skills: 'Skills',
+    contact: 'Contact',
+    experience: 'View Experience',
+    stackLabel: 'Tech Stack',
+    certLabel: 'Certifications',
+    expertise: 'Core Expertise',
+    expertiseSub: '20+ technical skills',
+    online: 'Open to remote',
+    qa: 'QA Automation', qaSub: 'SDET mindset',
+    api: 'API Testing', apiSub: 'Postman · REST',
+    db: 'SQL & DB Validation', dbSub: 'PostgreSQL · RLS',
+    sec: 'Security Testing', secSub: 'OWASP · RBAC'
+  },
+  es: {
+    badge: 'QA Automation Engineer / SDET',
+    role: 'Ingeniero en Sistemas de la Información',
+    location: 'Azua, República Dominicana · Remoto',
+    role2: 'QA Automation Engineer / SDET &',
+    role3: 'Ingeniero en Sistemas de la Información',
+    desc: 'Más de 3 años de experiencia profesional en QA abarcando automatización, pruebas web y de API, regresión, integración y validación end-to-end. Diseño y mantengo escenarios automatizados con Playwright, Selenium y Postman, valido REST APIs, ejecuto verificación a nivel de base de datos con SQL y colaboro con equipos de desarrollo para reproducir y resolver defectos.',
+    years: 'Años QA',
+    certs: 'Certificaciones',
+    skills: 'Skills',
+    contact: 'Contactar',
+    experience: 'Ver Experiencia',
+    stackLabel: 'Stack técnico',
+    certLabel: 'Certificaciones',
+    expertise: 'Core Expertise',
+    expertiseSub: '20+ skills técnicas',
+    online: 'Open to remote',
+    qa: 'QA Automation', qaSub: 'SDET mindset',
+    api: 'API Testing', apiSub: 'Postman · REST',
+    db: 'SQL & DB Validation', dbSub: 'PostgreSQL · RLS',
+    sec: 'Security Testing', secSub: 'OWASP · RBAC'
+  }
+}
+
 export default function Hero() {
+  const { lang } = useLanguage()
+  const tr = t[lang]
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-[#022c22]">
       <div className="absolute inset-0 z-0">
@@ -27,21 +78,17 @@ export default function Hero() {
         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-7">
           <div className="inline-flex items-center space-x-2 bg-accent/20 border border-accent/40 px-4 py-2 rounded-full mb-6 text-accent text-xs font-black backdrop-blur-md uppercase tracking-widest">
             <ShieldCheck className="w-4 h-4" />
-            <span>QA Automation Engineer / SDET</span>
+            <span>{tr.badge}</span>
           </div>
 
           <div className="flex items-center gap-4 mb-6">
             <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-accent/50 shadow-2xl shadow-accent/40 flex-shrink-0">
-              <img
-                src="/images/jose-suarez.jpg"
-                alt="José Manuel Suárez"
-                className="w-full h-full object-cover"
-              />
+              <img src="/images/jose-suarez.jpg" alt="José Manuel Suárez" className="w-full h-full object-cover" />
             </div>
             <div>
-              <p className="text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">Information Systems Engineer</p>
+              <p className="text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">{tr.role}</p>
               <p className="text-emerald-100/60 text-xs md:text-sm flex items-center gap-1.5 mt-1">
-                <MapPin className="w-3 h-3" /> Azua, República Dominicana · Remoto
+                <MapPin className="w-3 h-3" /> {tr.location}
               </p>
             </div>
           </div>
@@ -52,40 +99,33 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-emerald-50/90 font-bold mb-6">
-            QA Automation Engineer / SDET &amp; <span className="text-accent">Information Systems Engineer</span>
+            {tr.role2} <span className="text-accent">{tr.role3}</span>
           </p>
 
-          <p className="text-base md:text-lg text-emerald-100/75 mb-8 max-w-2xl leading-relaxed">
-            Más de <strong className="text-accent">3 años de experiencia profesional en QA</strong> abarcando
-            automatización, pruebas web y de API, regresión, integración y validación end-to-end. Diseño y
-            mantengo escenarios automatizados con <strong className="text-white">Playwright</strong>,
-            <strong className="text-white"> Selenium</strong> y <strong className="text-white">Postman</strong>,
-            valido REST APIs, ejecuto verificación a nivel de base de datos con SQL y colaboro con equipos
-            de desarrollo para reproducir y resolver defectos.
-          </p>
+          <p className="text-base md:text-lg text-emerald-100/75 mb-8 max-w-2xl leading-relaxed">{tr.desc}</p>
 
           <div className="grid grid-cols-3 gap-4 mb-8 max-w-lg">
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
               <p className="text-3xl font-black text-accent">3+</p>
-              <p className="text-[10px] font-bold text-emerald-100/50 uppercase tracking-widest mt-1">Años QA</p>
+              <p className="text-[10px] font-bold text-emerald-100/50 uppercase tracking-widest mt-1">{tr.years}</p>
             </div>
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
               <p className="text-3xl font-black text-accent">19+</p>
-              <p className="text-[10px] font-bold text-emerald-100/50 uppercase tracking-widest mt-1">Certificaciones</p>
+              <p className="text-[10px] font-bold text-emerald-100/50 uppercase tracking-widest mt-1">{tr.certs}</p>
             </div>
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
               <p className="text-3xl font-black text-accent">20+</p>
-              <p className="text-[10px] font-bold text-emerald-100/50 uppercase tracking-widest mt-1">Skills</p>
+              <p className="text-[10px] font-bold text-emerald-100/50 uppercase tracking-widest mt-1">{tr.skills}</p>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-3">
             <a href="#contacto" className="bg-accent text-white px-8 py-4 rounded-xl font-black flex items-center justify-center hover:bg-emerald-600 transition-all group shadow-2xl shadow-accent/40">
-              Contactar
+              {tr.contact}
               <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a href="#experiencia" className="glass-dark text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all text-center border border-white/20">
-              Ver Experiencia
+              {tr.experience}
             </a>
             <div className="flex gap-2">
               <a href="https://linkedin.com/in/josemanuelsuarez2110" target="_blank" rel="noopener noreferrer" className="glass-dark text-white p-4 rounded-xl hover:bg-accent transition-all border border-white/20 flex items-center justify-center" aria-label="LinkedIn">
@@ -103,7 +143,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Teléfonos debajo */}
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-emerald-100/60 font-medium">
             <a href="tel:+18294613778" className="flex items-center gap-2 hover:text-accent transition-colors">
               <Phone className="w-4 h-4 text-accent" /> +1 829-461-3778
@@ -125,22 +164,22 @@ export default function Hero() {
                   <Briefcase className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-white font-black text-sm">Core Expertise</p>
-                  <p className="text-emerald-100/50 text-xs">20+ skills técnicas</p>
+                  <p className="text-white font-black text-sm">{tr.expertise}</p>
+                  <p className="text-emerald-100/50 text-xs">{tr.expertiseSub}</p>
                 </div>
               </div>
               <div className="bg-emerald-500/20 border border-emerald-500/40 px-3 py-1 rounded-full flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
-                <span className="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Open to remote</span>
+                <span className="text-emerald-400 text-[10px] font-black uppercase tracking-widest">{tr.online}</span>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-3 mb-4">
               {[
-                { icon: <Bug />, label: 'QA Automation', sub: 'SDET mindset' },
-                { icon: <Terminal />, label: 'API Testing', sub: 'Postman · REST' },
-                { icon: <Database />, label: 'SQL & DB Validation', sub: 'PostgreSQL · RLS' },
-                { icon: <Lock />, label: 'Security Testing', sub: 'OWASP · RBAC' },
+                { icon: <Bug />, label: tr.qa, sub: tr.qaSub },
+                { icon: <Terminal />, label: tr.api, sub: tr.apiSub },
+                { icon: <Database />, label: tr.db, sub: tr.dbSub },
+                { icon: <Lock />, label: tr.sec, sub: tr.secSub },
               ].map((item, idx) => (
                 <div key={idx} className="bg-[#064e3b]/40 backdrop-blur-xl p-4 rounded-2xl border border-white/5 flex flex-col space-y-2 hover:border-accent/40 transition-colors group">
                   <div className="text-accent group-hover:scale-110 transition-transform w-fit">{item.icon}</div>
@@ -155,11 +194,11 @@ export default function Hero() {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-4 mb-4">
               <div className="flex items-center gap-2 mb-3">
                 <Code className="w-4 h-4 text-accent" />
-                <p className="text-[10px] font-black text-accent uppercase tracking-[0.2em]">Stack técnico</p>
+                <p className="text-[10px] font-black text-accent uppercase tracking-[0.2em]">{tr.stackLabel}</p>
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {STACK_TAGS.map((t) => (
-                  <span key={t} className="text-[10px] font-bold bg-accent/10 border border-accent/30 text-accent px-2.5 py-1 rounded-md">{t}</span>
+                {STACK_TAGS.map((tag) => (
+                  <span key={tag} className="text-[10px] font-bold bg-accent/10 border border-accent/30 text-accent px-2.5 py-1 rounded-md">{tag}</span>
                 ))}
               </div>
             </div>
@@ -167,7 +206,7 @@ export default function Hero() {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
               <div className="flex items-center gap-2 mb-3">
                 <Award className="w-4 h-4 text-accent" />
-                <p className="text-[10px] font-black text-accent uppercase tracking-[0.2em]">Certificaciones</p>
+                <p className="text-[10px] font-black text-accent uppercase tracking-[0.2em]">{tr.certLabel}</p>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {['eWPTX', 'eCPPT', 'eJPT', 'eSOC', 'eIAMA', 'CCNP', 'CompTIA+'].map((c) => (
