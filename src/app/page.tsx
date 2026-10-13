@@ -2,6 +2,8 @@ import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Hero from '@/components/sections/Hero'
 import About from '@/components/sections/About'
+import Experience from '@/components/sections/Experience'
+import Education from '@/components/sections/Education'
 import Services from '@/components/sections/Services'
 import Certifications from '@/components/sections/Certifications'
 import Methodology from '@/components/sections/Methodology'
@@ -17,6 +19,8 @@ export default function Home() {
       <Hero />
       <About />
       <Leadership />
+      <Experience />
+      <Education />
       <Services />
       <Certifications />
       <Methodology />

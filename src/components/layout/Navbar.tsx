@@ -9,11 +9,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navLinks = [
   { name: 'Inicio', href: '#home' },
   { name: 'Nosotros', href: '#nosotros' },
-  { name: 'Liderazgo', href: '#liderazgo' },
+  { name: 'Experiencia', href: '#experiencia' },
+  { name: 'Educación', href: '#educacion' },
   { name: 'Servicios', href: '#servicios' },
   { name: 'Certificaciones', href: '#certificaciones' },
-  { name: 'Metodología', href: '#metodologia' },
-  { name: 'Blog', href: '#blog' },
   { name: 'Contacto', href: '#contacto' },
 ]
 
@@ -41,24 +40,17 @@ export default function Navbar() {
           <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center shadow-lg shadow-accent/20 group-hover:scale-110 transition-transform">
             <Shield className="w-6 h-6 text-white" />
           </div>
-          <span className={cn(
-            "text-2xl font-black tracking-tighter transition-colors",
-            scrolled ? "text-white" : "text-white"
-          )}>
+          <span className="text-2xl font-black tracking-tighter text-white">
             SUAREZ <span className="text-accent underline decoration-accent/30 decoration-4 underline-offset-4">CONSULTORÍA</span>
           </span>
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-10">
+        <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className={cn(
-                "text-sm font-bold tracking-widest uppercase transition-all hover:text-accent relative group",
-                scrolled ? "text-emerald-50/80" : "text-emerald-50/90"
-              )}
+              className="text-sm font-bold tracking-widest uppercase transition-all hover:text-accent relative group text-emerald-50/90"
             >
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent transition-all group-hover:w-full" />
@@ -69,7 +61,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-white"
           onClick={() => setIsOpen(!isOpen)}
@@ -78,7 +69,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div

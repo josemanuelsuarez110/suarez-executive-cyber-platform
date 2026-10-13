@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
-import { Shield, Linkedin, Mail, ArrowUpRight } from 'lucide-react'
+import { Shield, Linkedin, Mail, ArrowUpRight, Github } from 'lucide-react'
 
 export default function Footer() {
   return (
     <footer className="bg-[#011d17] text-emerald-100/60 py-20 border-t border-white/5 relative overflow-hidden">
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 blur-[120px] rounded-full translate-x-1/2 translate-y-1/2" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-4 gap-16 mb-20">
           <div className="md:col-span-1">
@@ -19,13 +19,16 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm font-medium leading-relaxed mb-10 text-emerald-100/40">
-              Firma boutique especializada en ciberseguridad avanzada, infraestructura de redes críticas y cumplimiento internacional ISO 27001.
+              Firma boutique especializada en QA Automation, Web &amp; API Security Testing, validación SQL e integración CI/CD.
             </p>
             <div className="flex space-x-5">
-              <Link href="#" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition-all duration-300 border border-white/10 group shadow-lg">
+              <Link href="https://linkedin.com/in/josemanuelsuarez2110" target="_blank" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition-all duration-300 border border-white/10 group shadow-lg">
                 <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
               </Link>
-              <Link href="mailto:josemanuelsuarez11@gmail.com" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition-all duration-300 border border-white/10 group shadow-lg">
+              <Link href="https://github.com/josemanuelsuarez2110" target="_blank" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition-all duration-300 border border-white/10 group shadow-lg">
+                <Github className="w-6 h-6 group-hover:scale-110 transition-transform" />
+              </Link>
+              <Link href="mailto:josemanuelsuarez110@gmail.com" className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center hover:bg-accent hover:text-white transition-all duration-300 border border-white/10 group shadow-lg">
                 <Mail className="w-6 h-6 group-hover:scale-110 transition-transform" />
               </Link>
             </div>
@@ -34,7 +37,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-black mb-8 uppercase text-xs tracking-[0.2em]">Servicios</h4>
             <ul className="space-y-5 text-sm font-bold">
-              {['Ciberseguridad', 'ISO 27001', 'Networking', 'Ethical Hacking'].map((item, idx) => (
+              {['QA Automation', 'API Security', 'Web Pentesting', 'CI/CD Testing'].map((item, idx) => (
                 <li key={idx}>
                   <Link href="#servicios" className="hover:text-accent transition-colors flex items-center group">
                     <span className="w-1.5 h-1.5 bg-accent/30 rounded-full mr-3 group-hover:w-3 transition-all" />
@@ -48,11 +51,17 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-black mb-8 uppercase text-xs tracking-[0.2em]">Compañía</h4>
             <ul className="space-y-5 text-sm font-bold">
-              {['Sobre Nosotros', 'Metodología', 'Certificaciones', 'Contacto'].map((item, idx) => (
+              {[
+                { label: 'Sobre Nosotros', href: '#nosotros' },
+                { label: 'Experiencia', href: '#experiencia' },
+                { label: 'Educación', href: '#educacion' },
+                { label: 'Certificaciones', href: '#certificaciones' },
+                { label: 'Contacto', href: '#contacto' }
+              ].map((item, idx) => (
                 <li key={idx}>
-                  <Link href={`#${item.toLowerCase().replace(' ', '')}`} className="hover:text-accent transition-colors flex items-center group">
+                  <Link href={item.href} className="hover:text-accent transition-colors flex items-center group">
                     <span className="w-1.5 h-1.5 bg-accent/30 rounded-full mr-3 group-hover:w-3 transition-all" />
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -61,20 +70,20 @@ export default function Footer() {
 
           <div>
             <h4 className="text-white font-black mb-8 uppercase text-xs tracking-[0.2em]">Soporte Senior</h4>
-            <p className="text-sm font-medium mb-8 text-emerald-100/40">Consultoría Estratégica para Líderes de Infraestructura y TI.</p>
+            <p className="text-sm font-medium mb-8 text-emerald-100/40">Consultoría estratégica en QA Automation y seguridad de aplicaciones.</p>
             <div className="backdrop-blur-xl bg-white/5 p-8 rounded-[2rem] border border-white/10 shadow-2xl relative group">
-               <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]" />
-               <p className="text-[10px] uppercase font-black text-accent mb-3 tracking-[0.3em]">Auditoría Express</p>
-               <Link href="#contacto" className="text-lg font-black text-white flex items-center group/link">
-                 Agendar Ahora
-                 <ArrowUpRight className="ml-3 w-6 h-6 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform text-accent" />
-               </Link>
+              <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-[2rem]" />
+              <p className="text-[10px] uppercase font-black text-accent mb-3 tracking-[0.3em]">Auditoría Express</p>
+              <Link href="#contacto" className="text-lg font-black text-white flex items-center group/link">
+                Agendar Ahora
+                <ArrowUpRight className="ml-3 w-6 h-6 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform text-accent" />
+              </Link>
             </div>
           </div>
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row items-center justify-between text-[10px] uppercase tracking-[0.4em] font-black text-emerald-100/20">
-          <p>© 2024 SUAREZ SERVICIOS Y ASESORÍA. TODOS LOS DERECHOS RESERVADOS.</p>
+          <p>© 2026 SUAREZ SERVICIOS Y ASESORÍA. TODOS LOS DERECHOS RESERVADOS.</p>
           <div className="flex space-x-10 mt-6 md:mt-0">
             {['Privacidad', 'Términos', 'Cookies'].map((item, idx) => (
               <Link key={idx} href="#" className="hover:text-accent transition-colors">{item}</Link>
