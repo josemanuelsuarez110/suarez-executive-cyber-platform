@@ -75,7 +75,7 @@ export default function About() {
           >
             <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-[0_40px_80px_rgba(6,78,59,0.15)] border border-emerald-100/30 group">
               <img
-                src="/images/about-workspace.png"
+                src="/images/jose-suarez.jpg"
                 alt="Workspace Background"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />

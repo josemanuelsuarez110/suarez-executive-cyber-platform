@@ -31,8 +31,12 @@ export default function Hero() {
           </div>
 
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-accent to-emerald-500 flex items-center justify-center text-white font-black text-xl md:text-2xl shadow-lg shadow-accent/40 flex-shrink-0">
-              JMS
+            <div className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border-2 border-accent/50 shadow-2xl shadow-accent/40 flex-shrink-0">
+              <img
+                src="/images/jose-suarez.jpg"
+                alt="José Manuel Suárez"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div>
               <p className="text-accent text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">Information Systems Engineer</p>
