@@ -17,20 +17,20 @@ const steps = [
 export default function Methodology() {
   const { lang } = useLanguage()
   return (
-    <section id="metodologia" className="py-24 bg-white relative overflow-hidden">
+    <section id="metodologia" className="py-24 bg-slate-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-24">
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-accent font-black tracking-[0.2em] uppercase text-xs mb-6"
+            className="text-accent-gold font-black tracking-[0.2em] uppercase text-xs mb-6"
           >
             Nuestra Ruta
           </motion.h2>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-black text-primary mb-10 tracking-tighter"
+            className="text-5xl md:text-6xl font-black text-white mb-10 tracking-tighter"
           >
             Metodología de Trabajo Estructurada
           </motion.h3>
@@ -38,7 +38,7 @@ export default function Methodology() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-emerald-900/60 max-w-3xl mx-auto text-xl font-medium leading-relaxed"
+            className="text-slate-400/60 max-w-3xl mx-auto text-xl font-medium leading-relaxed"
           >
             Seguimos un proceso riguroso basado en mejores prácticas internacionales para garantizar resultados medibles y un retorno de inversión tangible.
           </motion.p>
@@ -58,11 +58,11 @@ export default function Methodology() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-20 h-20 rounded-[1.5rem] bg-emerald-50 border-4 border-white shadow-[0_10px_30px_rgba(6,78,59,0.05)] flex items-center justify-center text-accent mb-8 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent group-hover:text-white group-hover:shadow-accent/30 active:scale-95">
+                <div className="w-20 h-20 rounded-[1.5rem] bg-accent-gold/10 border-4 border-white shadow-[0_10px_30px_rgba(6,78,59,0.05)] flex items-center justify-center text-accent-gold mb-8 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent group-hover:text-white group-hover:shadow-accent/30 active:scale-95">
                   {React.isValidElement(step.icon) ? React.cloneElement(step.icon as React.ReactElement<any>, { className: 'w-8 h-8' }) : step.icon}
                 </div>
-                <h4 className="font-black text-primary mb-3 text-lg leading-tight tracking-tight uppercase group-hover:text-accent transition-colors">{step.title}</h4>
-                <p className="text-sm font-medium text-emerald-900/40 leading-relaxed px-2">{step.desc}</p>
+                <h4 className="font-black text-white mb-3 text-lg leading-tight tracking-tight uppercase group-hover:text-accent-gold transition-colors">{step.title}</h4>
+                <p className="text-sm font-medium text-slate-400/40 leading-relaxed px-2">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -82,8 +82,8 @@ export default function Methodology() {
                transition={{ delay: i * 0.1 }}
                className="bg-[#f0fdf4]/50 p-10 rounded-[2.5rem] border-l-[6px] border-accent shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500"
              >
-                <h4 className="text-2xl font-black text-primary mb-4 tracking-tight">{benefit.title}</h4>
-                <p className="text-emerald-950/60 text-lg font-medium leading-relaxed">{benefit.desc}</p>
+                <h4 className="text-2xl font-black text-white mb-4 tracking-tight">{benefit.title}</h4>
+                <p className="text-slate-300 text-lg font-medium leading-relaxed">{benefit.desc}</p>
              </motion.div>
            ))}
         </div>

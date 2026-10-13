@@ -53,15 +53,15 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-50 blur-[120px] rounded-full" />
+    <section id="faq" className="py-24 bg-slate-950 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-corporate-blue/20 blur-[120px] rounded-full" />
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="text-center mb-16">
-          <h2 className="text-accent font-black tracking-[0.2em] uppercase text-xs mb-4">{tr.label}</h2>
-          <h3 className="text-4xl md:text-6xl font-black text-primary leading-[1.1] tracking-tighter mb-6">
-            {tr.title1} <span className="text-emerald-500">{tr.title2}</span>
+          <h2 className="text-accent-gold font-black tracking-[0.2em] uppercase text-xs mb-4">{tr.label}</h2>
+          <h3 className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter mb-6">
+            {tr.title1} <span className="text-gradient-gold">{tr.title2}</span>
           </h3>
-          <p className="text-emerald-950/60 text-lg max-w-2xl mx-auto font-medium">{tr.subtitle}</p>
+          <p className="text-slate-300 text-lg max-w-2xl mx-auto font-medium">{tr.subtitle}</p>
         </motion.div>
 
         <div className="space-y-3">
@@ -72,14 +72,14 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="bg-white border border-emerald-100 rounded-2xl overflow-hidden hover:border-accent/40 transition-all"
+              className="glass-card overflow-hidden hover:border-accent-gold/40 transition-all"
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between gap-4 p-6 text-left"
               >
-                <span className="font-black text-primary text-base md:text-lg leading-tight">{faq.q[lang]}</span>
-                <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${open === i ? 'bg-accent text-white rotate-180' : 'bg-emerald-50 text-accent'}`}>
+                <span className="font-bold text-white text-base md:text-lg leading-tight">{faq.q[lang]}</span>
+                <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${open === i ? 'bg-accent-gold text-slate-950 rotate-180' : 'bg-accent-gold/10 text-accent-gold'}`}>
                   {open === i ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                 </span>
               </button>
@@ -92,7 +92,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <p className="px-6 pb-6 text-emerald-950/70 font-medium leading-relaxed">{faq.a[lang]}</p>
+                    <p className="px-6 pb-6 text-slate-300 font-medium leading-relaxed">{faq.a[lang]}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -105,15 +105,15 @@ export default function FAQ() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 text-center bg-gradient-to-r from-emerald-50 via-white to-emerald-50 border border-emerald-100 rounded-3xl p-10"
+          className="mt-12 text-center glass-card p-10"
         >
-          <h4 className="text-2xl font-black text-primary mb-2">{tr.ctaTitle}</h4>
-          <p className="text-emerald-950/60 font-medium mb-6">{tr.ctaDesc}</p>
+          <h4 className="text-2xl font-black text-white mb-2">{tr.ctaTitle}</h4>
+          <p className="text-slate-400 font-medium mb-6">{tr.ctaDesc}</p>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-accent text-white px-8 py-4 rounded-xl font-black hover:bg-emerald-600 transition-all shadow-2xl shadow-accent/40"
+            className="inline-flex items-center gap-2 bg-accent-gold text-slate-950 px-8 py-4 rounded-xl font-black hover:bg-yellow-500 transition-all shadow-2xl shadow-accent-gold/30"
           >
             <MessageCircle className="w-5 h-5" />
             {tr.ctaBtn}

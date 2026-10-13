@@ -58,13 +58,13 @@ export default function Certifications() {
 
   return (
     <>
-      <section className="py-20 bg-primary text-white" id="certifications">
+      <section className="py-20 bg-slate-950 text-white" id="certifications">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-start justify-between gap-12 mb-16">
             <div className="md:w-1/3">
-              <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">{lang === 'en' ? 'Professional Backing' : 'Respaldo Profesional'}</h2>
-              <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Evidencia Técnica y Certificada</h3>
-              <p className="text-slate-400 leading-relaxed">
+              <h2 className="text-accent-gold font-bold tracking-widest uppercase text-sm mb-4">{lang === 'en' ? 'Professional Backing' : 'Respaldo Profesional'}</h2>
+              <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white">Evidencia Técnica y Certificada</h3>
+              <p className="text-slate-300 leading-relaxed">
                 Cada servicio que ofrecemos está respaldado por formación continua y certificaciones de líderes mundiales
                 en QA, seguridad ofensiva, redes y ciberseguridad. Haga clic en cualquier certificado para ver el comprobante.
               </p>
@@ -80,16 +80,16 @@ export default function Certifications() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.03 }}
-                  className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 hover:border-accent/50 transition-all flex flex-col items-center text-center space-y-4 group"
+                  className="glass-card p-6 hover:border-accent-gold/50 transition-all flex flex-col items-center text-center space-y-4 group"
                 >
-                  <div className="text-accent w-12 h-12 flex items-center justify-center bg-accent/10 rounded-full group-hover:scale-110 transition-transform">
+                  <div className="text-accent-gold w-12 h-12 flex items-center justify-center bg-accent-gold/10 rounded-full border border-accent-gold/20 group-hover:scale-110 transition-transform">
                     {cert.icon}
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-sm block leading-tight">{cert.name}</h4>
                     <p className="text-[10px] text-slate-500 uppercase tracking-tighter mt-1">{cert.provider}</p>
                     {cert.date && (
-                      <p className="text-[10px] text-accent font-bold mt-1">{cert.date}</p>
+                      <p className="text-[10px] text-accent-gold font-bold mt-1">{cert.date}</p>
                     )}
                   </div>
 
@@ -98,13 +98,13 @@ export default function Certifications() {
                       href={cert.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 text-[10px] border border-white/20 py-2 rounded-md hover:bg-white/10 transition-colors text-center"
+                      className="flex-1 text-[10px] border border-white/20 py-2 rounded-md hover:bg-white/10 hover:border-accent-gold/50 transition-colors text-center"
                     >
                       Ver Entidad
                     </a>
                     <button
                       onClick={() => setSelected(cert)}
-                      className="flex-1 text-[10px] bg-accent text-white py-2 rounded-md hover:bg-accent/80 transition-colors flex items-center justify-center gap-1"
+                      className="flex-1 text-[10px] bg-accent-gold text-slate-950 py-2 rounded-md hover:bg-yellow-500 transition-colors flex items-center justify-center gap-1"
                     >
                       <Eye className="w-3 h-3" />
                       Ver
@@ -132,7 +132,7 @@ export default function Certifications() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="relative max-w-5xl w-full bg-[#022c22] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+              className="relative max-w-5xl w-full bg-slate-900 rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}

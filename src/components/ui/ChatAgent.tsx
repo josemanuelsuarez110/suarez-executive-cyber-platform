@@ -85,9 +85,9 @@ export default function ChatAgent() {
             className="bg-white w-[350px] h-[500px] rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-slate-200 mb-4"
           >
             {/* Header */}
-            <div className="bg-primary p-4 flex items-center justify-between text-white">
+            <div className="bg-slate-950 p-4 flex items-center justify-between text-white">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-accent-gold rounded-full flex items-center justify-center">
                   <Shield className="w-4 h-4" />
                 </div>
                 <div>
@@ -95,7 +95,7 @@ export default function ChatAgent() {
                   <p className="text-[10px] text-blue-200 uppercase tracking-widest mt-1">Suarez Consultoría</p>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="hover:text-accent transition-colors">
+              <button onClick={() => setIsOpen(false)} className="hover:text-accent-gold transition-colors">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -106,7 +106,7 @@ export default function ChatAgent() {
                 <div key={msg.id} className={cn('flex flex-col', msg.role === 'user' ? 'items-end' : 'items-start')}>
                   <div className={cn(
                     'max-w-[80%] rounded-2xl p-3 text-sm shadow-sm',
-                    msg.role === 'user' ? 'bg-accent text-white rounded-tr-none' : 'bg-white text-primary border border-slate-200 rounded-tl-none'
+                    msg.role === 'user' ? 'bg-accent-gold text-white rounded-tr-none' : 'bg-white text-primary border border-slate-200 rounded-tl-none'
                   )}>
                     {msg.content}
                   </div>
@@ -134,7 +134,7 @@ export default function ChatAgent() {
                 />
                 <button 
                   onClick={handleSend}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-accent-gold text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
                 >
                   <Send className="w-4 h-4" />
                 </button>
@@ -148,7 +148,7 @@ export default function ChatAgent() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-16 h-16 bg-accent rounded-full shadow-2xl flex items-center justify-center text-white relative"
+        className="w-16 h-16 bg-accent-gold rounded-full shadow-2xl flex items-center justify-center text-white relative"
       >
         {isOpen ? <X className="w-8 h-8" /> : <MessageSquare className="w-8 h-8" />}
         {!isOpen && <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white" />}
