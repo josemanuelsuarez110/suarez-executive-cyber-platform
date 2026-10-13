@@ -154,7 +154,7 @@ export default function Experience() {
   const tr = t[lang]
 
   return (
-    <section id="experiencia" className="py-24 bg-white relative overflow-hidden">
+    <section id="experiencia" className="py-24 bg-slate-950 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-corporate-blue/20 blur-[120px] rounded-full" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -216,7 +216,7 @@ export default function Experience() {
                     ))}
                   </ul>
 
-                  <div className="pt-6 border-t border-emerald-100">
+                  <div className="pt-6 border-t border-white/10">
                     <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3">{tr.techLabel}</p>
                     <div className="flex flex-wrap gap-2">
                       {exp.tech.map((tech, k) => (
@@ -242,7 +242,7 @@ export default function Experience() {
                 <p className="font-black text-white text-lg">{tr.ctaTitle}</p>
                 <p className="text-slate-400 text-sm font-medium">{tr.ctaDesc}</p>
               </div>
-              <a href="https://jmtechlab.do" target="_blank" rel="noopener noreferrer" className="bg-accent-gold text-white px-6 py-3 rounded-xl font-black flex items-center gap-2 hover:bg-emerald-600 transition-all whitespace-nowrap">
+              <a href="https://jmtechlab.do" target="_blank" rel="noopener noreferrer" className="bg-accent-gold text-slate-950 px-6 py-3 rounded-xl font-black flex items-center gap-2 hover:bg-yellow-500 transition-all whitespace-nowrap">
                 {tr.ctaBtn}
                 <ExternalLink className="w-4 h-4" />
               </a>
