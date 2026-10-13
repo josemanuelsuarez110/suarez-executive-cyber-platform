@@ -155,7 +155,7 @@ export default function Experience() {
 
   return (
     <section id="experiencia" className="py-24 bg-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-50 blur-[120px] rounded-full" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-corporate-blue/20 blur-[120px] rounded-full" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -164,15 +164,15 @@ export default function Experience() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-accent font-black tracking-[0.2em] uppercase text-xs mb-4">{tr.label}</h2>
-          <h3 className="text-5xl md:text-6xl font-black text-primary leading-[1.1] tracking-tighter mb-6">
-            {tr.title1} <span className="text-emerald-500">{tr.title2}</span>
+          <h2 className="text-accent-gold font-black tracking-[0.2em] uppercase text-xs mb-4">{tr.label}</h2>
+          <h3 className="text-5xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter mb-6">
+            {tr.title1} <span className="text-gradient-gold">{tr.title2}</span>
           </h3>
-          <p className="text-emerald-950/60 text-lg max-w-3xl mx-auto font-medium leading-relaxed">{tr.subtitle}</p>
+          <p className="text-slate-300 text-lg max-w-3xl mx-auto font-medium leading-relaxed">{tr.subtitle}</p>
         </motion.div>
 
         <div className="relative max-w-5xl mx-auto">
-          <div className="absolute left-6 top-4 bottom-4 w-0.5 bg-gradient-to-b from-accent via-accent/50 to-transparent hidden md:block" />
+          <div className="absolute left-6 top-4 bottom-4 w-0.5 bg-gradient-to-b from-accent-gold via-accent-gold/50 to-transparent hidden md:block" />
 
           <div className="space-y-10">
             {experiences.map((exp, i) => (
@@ -184,43 +184,43 @@ export default function Experience() {
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 className="relative md:pl-20"
               >
-                <div className={`hidden md:flex absolute left-0 top-2 w-12 h-12 rounded-2xl items-center justify-center border-4 border-white shadow-xl ${exp.current ? 'bg-accent' : 'bg-emerald-700'}`}>
+                <div className={`hidden md:flex absolute left-0 top-2 w-12 h-12 rounded-2xl items-center justify-center border-4 border-white shadow-xl ${exp.current ? 'bg-accent' : 'bg-corporate-blue'}`}>
                   <Briefcase className="w-5 h-5 text-white" />
                 </div>
 
-                <div className="bg-white border border-emerald-100 rounded-3xl p-8 md:p-10 shadow-[0_20px_60px_rgba(6,78,59,0.08)] hover:shadow-[0_30px_80px_rgba(6,78,59,0.15)] transition-all">
+                <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.3)] hover:shadow-[0_30px_80px_rgba(201,162,39,0.15)] transition-all">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6 gap-4">
                     <div className="flex-1">
                       {exp.current && (
-                        <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-accent bg-accent/10 border border-accent/30 px-3 py-1 rounded-full mb-3">
+                        <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-accent-gold bg-accent/10 border border-accent/30 px-3 py-1 rounded-full mb-3">
                           <TrendingUp className="w-3 h-3" /> {tr.currentLabel}
                         </span>
                       )}
-                      <h4 className="text-2xl md:text-3xl font-black text-primary tracking-tight">{exp.role[lang]}</h4>
-                      <p className="text-accent font-bold mt-1 text-lg">{exp.company[lang]}</p>
+                      <h4 className="text-2xl md:text-3xl font-black text-white tracking-tight">{exp.role[lang]}</h4>
+                      <p className="text-accent-gold font-bold mt-1 text-lg">{exp.company[lang]}</p>
                     </div>
-                    <div className="flex flex-col md:items-end gap-2 text-sm font-bold text-emerald-900/60 flex-shrink-0">
+                    <div className="flex flex-col md:items-end gap-2 text-sm font-bold text-slate-400 flex-shrink-0">
                       <span className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {exp.period[lang]}</span>
                       <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> {exp.location[lang]}</span>
                     </div>
                   </div>
 
-                  <p className="text-emerald-950/70 font-medium mb-6 leading-relaxed">{exp.summary[lang]}</p>
+                  <p className="text-slate-300 font-medium mb-6 leading-relaxed">{exp.summary[lang]}</p>
 
                   <ul className="space-y-3 mb-8">
                     {exp.bullets[lang].map((b, j) => (
-                      <li key={j} className="flex items-start gap-3 text-emerald-950/75 font-medium leading-relaxed">
-                        <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                      <li key={j} className="flex items-start gap-3 text-slate-300 font-medium leading-relaxed">
+                        <CheckCircle2 className="w-5 h-5 text-accent-gold flex-shrink-0 mt-0.5" />
                         <span>{b}</span>
                       </li>
                     ))}
                   </ul>
 
                   <div className="pt-6 border-t border-emerald-100">
-                    <p className="text-[10px] font-black text-emerald-900/40 uppercase tracking-[0.2em] mb-3">{tr.techLabel}</p>
+                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-3">{tr.techLabel}</p>
                     <div className="flex flex-wrap gap-2">
                       {exp.tech.map((tech, k) => (
-                        <span key={k} className="text-xs font-bold bg-emerald-50 border border-emerald-100 text-emerald-900/70 px-3 py-1.5 rounded-lg">{tech}</span>
+                        <span key={k} className="text-xs font-bold bg-corporate-blue/20 border border-corporate-blue/30 text-blue-300 px-3 py-1.5 rounded-lg">{tech}</span>
                       ))}
                     </div>
                   </div>
@@ -236,13 +236,13 @@ export default function Experience() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-16 text-center"
           >
-            <div className="inline-flex flex-col md:flex-row items-center gap-4 bg-gradient-to-r from-emerald-50 to-white border border-emerald-100 rounded-2xl p-6">
+            <div className="inline-flex flex-col md:flex-row items-center gap-4 bg-gradient-to-r from-corporate-blue/20 to-slate-950 border border-white/10 rounded-2xl p-6">
               <Award className="w-8 h-8 text-accent" />
               <div className="text-center md:text-left">
-                <p className="font-black text-primary text-lg">{tr.ctaTitle}</p>
-                <p className="text-emerald-900/60 text-sm font-medium">{tr.ctaDesc}</p>
+                <p className="font-black text-white text-lg">{tr.ctaTitle}</p>
+                <p className="text-slate-400 text-sm font-medium">{tr.ctaDesc}</p>
               </div>
-              <a href="https://jmtechlab.do" target="_blank" rel="noopener noreferrer" className="bg-accent text-white px-6 py-3 rounded-xl font-black flex items-center gap-2 hover:bg-emerald-600 transition-all whitespace-nowrap">
+              <a href="https://jmtechlab.do" target="_blank" rel="noopener noreferrer" className="bg-accent-gold text-white px-6 py-3 rounded-xl font-black flex items-center gap-2 hover:bg-emerald-600 transition-all whitespace-nowrap">
                 {tr.ctaBtn}
                 <ExternalLink className="w-4 h-4" />
               </a>
