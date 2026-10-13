@@ -5,6 +5,9 @@ import About from '@/components/sections/About'
 import Experience from '@/components/sections/Experience'
 import Education from '@/components/sections/Education'
 import Services from '@/components/sections/Services'
+import Plans from '@/components/sections/Plans'
+import Process from '@/components/sections/Process'
+import Sectors from '@/components/sections/Sectors'
 import Certifications from '@/components/sections/Certifications'
 import Methodology from '@/components/sections/Methodology'
 import Blog from '@/components/sections/Blog'
@@ -22,6 +25,9 @@ export default function Home() {
       <Experience />
       <Education />
       <Services />
+      <Plans />
+      <Process />
+      <Sectors />
       <Certifications />
       <Methodology />
       <Blog />
