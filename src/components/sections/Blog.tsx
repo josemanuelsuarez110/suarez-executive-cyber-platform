@@ -87,7 +87,7 @@ export default function Blog() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute top-6 left-6">
-                  <span className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl text-white font-black text-xs uppercase tracking-widest shadow-lg">
+                  <span className="bg-accent-gold px-4 py-2 rounded-xl text-slate-950 font-black text-xs uppercase tracking-widest shadow-lg">
                     {post.category}
                   </span>
                 </div>

@@ -74,7 +74,7 @@ const Leadership = () => {
                 { icon: Award, text: 'Excelencia Certificada' },
                 { icon: CheckCircle2, text: 'Cumplimiento Normativo' },
               ].map((item, index) => (
-                <div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[#10b981]/40 transition-colors">
+                <div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-accent-gold/40 transition-colors">
                   <div className="p-2 rounded-lg bg-[#10b981]/10">
                     <item.icon className="w-5 h-5 text-[#10b981]" />
                   </div>

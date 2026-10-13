@@ -23,7 +23,7 @@ export default function Methodology() {
           <motion.h2 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-accent-gold font-black tracking-[0.2em] uppercase text-xs mb-6"
+            className="text-accent-gold-gold font-black tracking-[0.2em] uppercase text-xs mb-6"
           >
             Nuestra Ruta
           </motion.h2>
@@ -58,10 +58,10 @@ export default function Methodology() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-20 h-20 rounded-[1.5rem] bg-accent-gold/10 border-4 border-white shadow-[0_10px_30px_rgba(6,78,59,0.05)] flex items-center justify-center text-accent-gold mb-8 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent group-hover:text-white group-hover:shadow-accent/30 active:scale-95">
+                <div className="w-20 h-20 rounded-[1.5rem] bg-accent-gold/10 border-4 border-white shadow-[0_10px_30px_rgba(6,78,59,0.05)] flex items-center justify-center text-accent-gold-gold mb-8 transition-all duration-500 group-hover:scale-110 group-hover:bg-accent group-hover:text-white group-hover:shadow-accent/30 active:scale-95">
                   {React.isValidElement(step.icon) ? React.cloneElement(step.icon as React.ReactElement<any>, { className: 'w-8 h-8' }) : step.icon}
                 </div>
-                <h4 className="font-black text-white mb-3 text-lg leading-tight tracking-tight uppercase group-hover:text-accent-gold transition-colors">{step.title}</h4>
+                <h4 className="font-black text-white mb-3 text-lg leading-tight tracking-tight uppercase group-hover:text-accent-gold-gold transition-colors">{step.title}</h4>
                 <p className="text-sm font-medium text-slate-400/40 leading-relaxed px-2">{step.desc}</p>
               </motion.div>
             ))}
@@ -80,7 +80,7 @@ export default function Methodology() {
                initial={{ opacity: 0, scale: 0.95 }}
                whileInView={{ opacity: 1, scale: 1 }}
                transition={{ delay: i * 0.1 }}
-               className="bg-[#f0fdf4]/50 p-10 rounded-[2.5rem] border-l-[6px] border-accent shadow-sm hover:shadow-xl hover:bg-white transition-all duration-500"
+               className="glass-card p-10 rounded-[2.5rem] border-l-[6px] border-accent-gold shadow-sm hover:shadow-xl hover:bg-slate-900/10 transition-all duration-500"
              >
                 <h4 className="text-2xl font-black text-white mb-4 tracking-tight">{benefit.title}</h4>
                 <p className="text-slate-300 text-lg font-medium leading-relaxed">{benefit.desc}</p>
