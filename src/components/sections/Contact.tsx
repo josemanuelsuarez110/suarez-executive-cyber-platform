@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle2, MessageCircle } from 'lucide-react'
 
 const contactInfo = [
@@ -44,6 +45,8 @@ const contactInfo = [
 ]
 
 export default function Contact() {
+  const { lang } = useLanguage()
+  const tr = (en: string, es: string) => lang === 'en' ? en : es
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -68,10 +71,10 @@ export default function Contact() {
         >
           <h2 className="text-accent font-black tracking-[0.2em] uppercase text-xs mb-4">Contacto</h2>
           <h3 className="text-5xl md:text-6xl font-black leading-[1.1] tracking-tighter mb-6">
-            Hablemos de <span className="text-accent">su proyecto</span>
+            {tr('Let\'s talk about ', 'Hablemos de ')}<span className="text-accent">{tr('your project', 'su proyecto')}</span>
           </h3>
           <p className="text-emerald-100/60 text-xl max-w-2xl mx-auto font-medium">
-            ¿Necesita QA Automation, pentesting de APIs o auditoría de seguridad? Conversemos.
+            {tr('Need QA Automation, API pentesting or security auditing? Let\'s talk.', '¿Necesita QA Automation, pentesting de APIs o auditoría de seguridad? Conversemos.')}
           </p>
         </motion.div>
 
@@ -116,24 +119,24 @@ export default function Contact() {
                 <div className="bg-accent/20 w-20 h-20 rounded-full flex items-center justify-center text-accent">
                   <CheckCircle2 className="w-12 h-12" />
                 </div>
-                <h4 className="text-2xl font-black">¡Mensaje enviado!</h4>
-                <p className="text-emerald-100/60 font-medium">Le responderé a la brevedad posible.</p>
+                <h4 className="text-2xl font-black">{tr('Message sent!', '¡Mensaje enviado!')}</h4>
+                <p className="text-emerald-100/60 font-medium">{tr('I will reply as soon as possible.', 'Le responderé a la brevedad posible.')}</p>
                 <button
                   onClick={() => setSubmitted(false)}
                   className="text-accent font-bold text-sm hover:underline"
                 >
-                  Enviar otro mensaje
+                  {tr('Send another message', 'Enviar otro mensaje')}
                 </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label className="text-xs font-black text-emerald-400 uppercase tracking-widest mb-2 block">Nombre</label>
+                  <label className="text-xs font-black text-emerald-400 uppercase tracking-widest mb-2 block">{tr('Name', 'Nombre')}</label>
                   <input
                     type="text"
                     required
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-emerald-100/30 focus:outline-none focus:border-accent transition-colors"
-                    placeholder="Su nombre completo"
+                    placeholder={tr('Your full name', 'Su nombre completo')}
                   />
                 </div>
                 <div>
@@ -146,12 +149,12 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="text-xs font-black text-emerald-400 uppercase tracking-widest mb-2 block">Mensaje</label>
+                  <label className="text-xs font-black text-emerald-400 uppercase tracking-widest mb-2 block">{tr('Message', 'Mensaje')}</label>
                   <textarea
                     required
                     rows={4}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-emerald-100/30 focus:outline-none focus:border-accent transition-colors resize-none"
-                    placeholder="Cuénteme sobre su proyecto…"
+                    placeholder={tr('Tell me about your project…', 'Cuénteme sobre su proyecto…')}
                   />
                 </div>
                 <button
@@ -159,7 +162,7 @@ export default function Contact() {
                   disabled={loading}
                   className="w-full bg-accent text-white py-5 rounded-xl font-black uppercase tracking-widest hover:bg-emerald-600 transition-all flex items-center justify-center gap-3 disabled:opacity-60"
                 >
-                  {loading ? 'Enviando…' : (
+                  {loading ? tr('Sending…', 'Enviando…') : (
                     <>
                       Enviar Mensaje
                       <Send className="w-5 h-5" />

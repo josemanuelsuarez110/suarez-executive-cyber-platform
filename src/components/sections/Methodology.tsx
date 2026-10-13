@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { ClipboardCheck, Search, Lightbulb, Wrench, CheckCircle, RefreshCcw } from 'lucide-react'
 
 const steps = [
@@ -14,6 +15,7 @@ const steps = [
 ]
 
 export default function Methodology() {
+  const { lang } = useLanguage()
   return (
     <section id="metodologia" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">

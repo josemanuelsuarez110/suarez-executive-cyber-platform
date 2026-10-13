@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { Calendar, ArrowRight, ShieldAlert, Newspaper, Cpu, Globe } from 'lucide-react'
 
 const blogPosts = [
@@ -32,6 +33,7 @@ const blogPosts = [
 ]
 
 export default function Blog() {
+  const { lang } = useLanguage()
   return (
     <section id="blog" className="py-24 bg-white relative overflow-hidden">
       {/* Decorative Blur */}

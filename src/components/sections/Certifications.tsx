@@ -1,5 +1,6 @@
 'use client'
 
+import { useLanguage } from '@/contexts/LanguageContext'
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -52,6 +53,7 @@ const certs: Cert[] = [
 ]
 
 export default function Certifications() {
+  const { lang } = useLanguage()
   const [selected, setSelected] = useState<Cert | null>(null)
 
   return (
@@ -60,7 +62,7 @@ export default function Certifications() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-start justify-between gap-12 mb-16">
             <div className="md:w-1/3">
-              <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">Respaldo Profesional</h2>
+              <h2 className="text-accent font-bold tracking-widest uppercase text-sm mb-4">{lang === 'en' ? 'Professional Backing' : 'Respaldo Profesional'}</h2>
               <h3 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Evidencia Técnica y Certificada</h3>
               <p className="text-slate-400 leading-relaxed">
                 Cada servicio que ofrecemos está respaldado por formación continua y certificaciones de líderes mundiales
