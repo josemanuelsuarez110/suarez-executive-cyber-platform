@@ -8,6 +8,7 @@ import Services from '@/components/sections/Services'
 import Plans from '@/components/sections/Plans'
 import Process from '@/components/sections/Process'
 import Sectors from '@/components/sections/Sectors'
+import FAQ from '@/components/sections/FAQ'
 import Certifications from '@/components/sections/Certifications'
 import Methodology from '@/components/sections/Methodology'
 import Blog from '@/components/sections/Blog'
@@ -28,6 +29,7 @@ export default function Home() {
       <Plans />
       <Process />
       <Sectors />
+      <FAQ />
       <Certifications />
       <Methodology />
       <Blog />
