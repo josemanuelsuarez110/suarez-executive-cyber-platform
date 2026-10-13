@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import {
   ChevronRight, ShieldCheck, Bug, Terminal, GitBranch, Lock,
-  Award, Linkedin, Github, Mail, MapPin, Briefcase, Code, Database, Cpu
+  Award, Linkedin, Github, Mail, MapPin, Briefcase, Code, Database, Cpu, Phone, MessageCircle
 } from 'lucide-react'
 
 const STACK_TAGS = [
@@ -19,29 +19,17 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-[#022c22]">
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-bg.png"
-          alt="Cybersecurity Backdrop"
-          className="w-full h-full object-cover opacity-50"
-        />
+        <img src="/images/hero-bg.png" alt="Cybersecurity Backdrop" className="w-full h-full object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#022c22] via-[#022c22]/95 to-[#022c22]/70" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center z-10 w-full">
-        {/* Columna izquierda */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="lg:col-span-7"
-        >
-          {/* Badge */}
+        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }} className="lg:col-span-7">
           <div className="inline-flex items-center space-x-2 bg-accent/20 border border-accent/40 px-4 py-2 rounded-full mb-6 text-accent text-xs font-black backdrop-blur-md uppercase tracking-widest">
             <ShieldCheck className="w-4 h-4" />
             <span>QA Automation Engineer / SDET</span>
           </div>
 
-          {/* Nombre + avatar */}
           <div className="flex items-center gap-4 mb-6">
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-accent to-emerald-500 flex items-center justify-center text-white font-black text-xl md:text-2xl shadow-lg shadow-accent/40 flex-shrink-0">
               JMS
@@ -54,19 +42,15 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Título */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-4 leading-[1.05] tracking-tighter">
             José Manuel <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">
-              Suárez
-            </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-emerald-400">Suárez</span>
           </h1>
 
           <p className="text-lg md:text-xl text-emerald-50/90 font-bold mb-6">
             QA Automation Engineer / SDET &amp; <span className="text-accent">Information Systems Engineer</span>
           </p>
 
-          {/* Descripción */}
           <p className="text-base md:text-lg text-emerald-100/75 mb-8 max-w-2xl leading-relaxed">
             Más de <strong className="text-accent">3 años de experiencia profesional en QA</strong> abarcando
             automatización, pruebas web y de API, regresión, integración y validación end-to-end. Diseño y
@@ -76,7 +60,6 @@ export default function Hero() {
             de desarrollo para reproducir y resolver defectos.
           </p>
 
-          {/* Stats */}
           <div className="grid grid-cols-3 gap-4 mb-8 max-w-lg">
             <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
               <p className="text-3xl font-black text-accent">3+</p>
@@ -92,60 +75,46 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Botones */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-            <a
-              href="#contacto"
-              className="bg-accent text-white px-8 py-4 rounded-xl font-black flex items-center justify-center hover:bg-emerald-600 transition-all group shadow-2xl shadow-accent/40"
-            >
+            <a href="#contacto" className="bg-accent text-white px-8 py-4 rounded-xl font-black flex items-center justify-center hover:bg-emerald-600 transition-all group shadow-2xl shadow-accent/40">
               Contactar
               <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a
-              href="#experiencia"
-              className="glass-dark text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all text-center border border-white/20"
-            >
+            <a href="#experiencia" className="glass-dark text-white px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition-all text-center border border-white/20">
               Ver Experiencia
             </a>
             <div className="flex gap-2">
-              <a
-                href="https://linkedin.com/in/josemanuelsuarez2110"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-dark text-white p-4 rounded-xl hover:bg-accent transition-all border border-white/20 flex items-center justify-center"
-                aria-label="LinkedIn"
-              >
+              <a href="https://linkedin.com/in/josemanuelsuarez2110" target="_blank" rel="noopener noreferrer" className="glass-dark text-white p-4 rounded-xl hover:bg-accent transition-all border border-white/20 flex items-center justify-center" aria-label="LinkedIn">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a
-                href="https://github.com/josemanuelsuarez2110"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-dark text-white p-4 rounded-xl hover:bg-accent transition-all border border-white/20 flex items-center justify-center"
-                aria-label="GitHub"
-              >
+              <a href="https://github.com/josemanuelsuarez2110" target="_blank" rel="noopener noreferrer" className="glass-dark text-white p-4 rounded-xl hover:bg-accent transition-all border border-white/20 flex items-center justify-center" aria-label="GitHub">
                 <Github className="w-5 h-5" />
               </a>
-              <a
-                href="mailto:josemanuelsuarez110@gmail.com"
-                className="glass-dark text-white p-4 rounded-xl hover:bg-accent transition-all border border-white/20 flex items-center justify-center"
-                aria-label="Email"
-              >
+              <a href="mailto:josemanuelsuarez110@gmail.com" className="glass-dark text-white p-4 rounded-xl hover:bg-accent transition-all border border-white/20 flex items-center justify-center" aria-label="Email">
                 <Mail className="w-5 h-5" />
+              </a>
+              <a href="https://wa.me/18095135535" target="_blank" rel="noopener noreferrer" className="glass-dark text-white p-4 rounded-xl hover:bg-emerald-500 transition-all border border-white/20 flex items-center justify-center" aria-label="WhatsApp">
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
           </div>
+
+          {/* Teléfonos debajo */}
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-emerald-100/60 font-medium">
+            <a href="tel:+18294613778" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <Phone className="w-4 h-4 text-accent" /> +1 829-461-3778
+            </a>
+            <a href="https://wa.me/18095135535" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-emerald-400 transition-colors">
+              <MessageCircle className="w-4 h-4 text-emerald-400" /> +1 809-513-5535 <span className="text-[10px] font-black text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded">WhatsApp</span>
+            </a>
+            <a href="mailto:josemanuelsuarez110@gmail.com" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <Mail className="w-4 h-4 text-accent" /> josemanuelsuarez110@gmail.com
+            </a>
+          </div>
         </motion.div>
 
-        {/* Columna derecha */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="relative hidden lg:block lg:col-span-5"
-        >
+        <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: 0.2 }} className="relative hidden lg:block lg:col-span-5">
           <div className="relative z-10 glass-dark p-8 rounded-[2.5rem] border border-white/10 shadow-[0_0_50px_rgba(16,185,129,0.1)]">
-            {/* Header */}
             <div className="flex items-center justify-between mb-6 pb-6 border-b border-white/10">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center text-accent">
@@ -162,7 +131,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Grid principal (4) */}
             <div className="grid grid-cols-2 gap-3 mb-4">
               {[
                 { icon: <Bug />, label: 'QA Automation', sub: 'SDET mindset' },
@@ -180,7 +148,6 @@ export default function Hero() {
               ))}
             </div>
 
-            {/* Stack completo */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-4 mb-4">
               <div className="flex items-center gap-2 mb-3">
                 <Code className="w-4 h-4 text-accent" />
@@ -188,14 +155,11 @@ export default function Hero() {
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {STACK_TAGS.map((t) => (
-                  <span key={t} className="text-[10px] font-bold bg-accent/10 border border-accent/30 text-accent px-2.5 py-1 rounded-md">
-                    {t}
-                  </span>
+                  <span key={t} className="text-[10px] font-bold bg-accent/10 border border-accent/30 text-accent px-2.5 py-1 rounded-md">{t}</span>
                 ))}
               </div>
             </div>
 
-            {/* Certificaciones */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-4">
               <div className="flex items-center gap-2 mb-3">
                 <Award className="w-4 h-4 text-accent" />
@@ -203,9 +167,7 @@ export default function Hero() {
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {['eWPTX', 'eCPPT', 'eJPT', 'eSOC', 'eIAMA', 'CCNP', 'CompTIA+'].map((c) => (
-                  <span key={c} className="text-[10px] font-black bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 px-2.5 py-1 rounded-md">
-                    {c}
-                  </span>
+                  <span key={c} className="text-[10px] font-black bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 px-2.5 py-1 rounded-md">{c}</span>
                 ))}
               </div>
             </div>

@@ -2,14 +2,45 @@
 
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle2 } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Github, Send, CheckCircle2, MessageCircle } from 'lucide-react'
 
 const contactInfo = [
-  { icon: <Mail className="w-6 h-6" />, label: 'Email', value: 'josemanuelsuarez110@gmail.com', href: 'mailto:josemanuelsuarez110@gmail.com' },
-  { icon: <Phone className="w-6 h-6" />, label: 'Teléfono', value: '+1 829-461-3778', href: 'tel:+18294613778' },
-  { icon: <MapPin className="w-6 h-6" />, label: 'Ubicación', value: 'Azua, República Dominicana', href: '#' },
-  { icon: <Linkedin className="w-6 h-6" />, label: 'LinkedIn', value: 'josemanuelsuarez2110', href: 'https://linkedin.com/in/josemanuelsuarez2110' },
-  { icon: <Github className="w-6 h-6" />, label: 'GitHub', value: 'josemanuelsuarez2110', href: 'https://github.com/josemanuelsuarez2110' },
+  {
+    icon: <Mail className="w-6 h-6" />,
+    label: 'Email',
+    value: 'josemanuelsuarez110@gmail.com',
+    href: 'mailto:josemanuelsuarez110@gmail.com'
+  },
+  {
+    icon: <Phone className="w-6 h-6" />,
+    label: 'Teléfono',
+    value: '+1 829-461-3778',
+    href: 'tel:+18294613778'
+  },
+  {
+    icon: <MessageCircle className="w-6 h-6" />,
+    label: 'WhatsApp',
+    value: '+1 809-513-5535',
+    href: 'https://wa.me/18095135535'
+  },
+  {
+    icon: <MapPin className="w-6 h-6" />,
+    label: 'Ubicación',
+    value: 'Azua, República Dominicana',
+    href: '#'
+  },
+  {
+    icon: <Linkedin className="w-6 h-6" />,
+    label: 'LinkedIn',
+    value: 'josemanuelsuarez2110',
+    href: 'https://linkedin.com/in/josemanuelsuarez2110'
+  },
+  {
+    icon: <Github className="w-6 h-6" />,
+    label: 'GitHub',
+    value: 'josemanuelsuarez2110',
+    href: 'https://github.com/josemanuelsuarez2110'
+  },
 ]
 
 export default function Contact() {
@@ -45,13 +76,13 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12">
-          {/* Información de contacto */}
+          {/* Información */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4"
           >
             {contactInfo.map((info, i) => (
               <a
@@ -59,14 +90,14 @@ export default function Contact() {
                 href={info.href}
                 target={info.href.startsWith('http') ? '_blank' : undefined}
                 rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="flex items-center gap-5 bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 hover:border-accent/40 transition-all group"
+                className="flex items-center gap-5 bg-white/5 border border-white/10 p-5 rounded-2xl hover:bg-white/10 hover:border-accent/40 transition-all group"
               >
-                <div className="text-accent bg-accent/10 w-14 h-14 rounded-2xl flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all">
+                <div className="text-accent bg-accent/10 w-12 h-12 rounded-2xl flex items-center justify-center group-hover:bg-accent group-hover:text-white transition-all flex-shrink-0">
                   {info.icon}
                 </div>
-                <div>
-                  <p className="text-xs font-black text-emerald-400 uppercase tracking-widest mb-1">{info.label}</p>
-                  <p className="font-bold text-white">{info.value}</p>
+                <div className="min-w-0">
+                  <p className="text-[10px] font-black text-emerald-400 uppercase tracking-widest mb-0.5">{info.label}</p>
+                  <p className="font-bold text-white text-sm truncate">{info.value}</p>
                 </div>
               </a>
             ))}
@@ -95,7 +126,7 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label className="text-xs font-black text-emerald-400 uppercase tracking-widest mb-2 block">Nombre</label>
                   <input
@@ -118,7 +149,7 @@ export default function Contact() {
                   <label className="text-xs font-black text-emerald-400 uppercase tracking-widest mb-2 block">Mensaje</label>
                   <textarea
                     required
-                    rows={5}
+                    rows={4}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-emerald-100/30 focus:outline-none focus:border-accent transition-colors resize-none"
                     placeholder="Cuénteme sobre su proyecto…"
                   />
