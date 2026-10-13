@@ -1,25 +1,27 @@
 @import "tailwindcss";
 
+@theme {
+  --color-corporate-blue: #1E3A5F;
+  --color-accent-gold: #C9A227;
+  --color-finance-green: #8A6D1D;
+
+  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
 :root {
-  --background: #f0fdf4; /* Very light green */
-  --foreground: #064e3b; /* Deep emerald */
-  
-  --primary: #064e3b; /* Deep emerald */
+  --background: #020617;
+  --foreground: #f1f5f9;
+  --primary: #1E3A5F;
   --primary-foreground: #ffffff;
-  
-  --secondary: #065f46; /* Slightly lighter emerald */
-  --secondary-foreground: #f0fdf4;
-  
-  --accent: #10b981; /* Vibrant emerald green */
-  --accent-foreground: #ffffff;
-  
+  --secondary: #8A6D1D;
+  --secondary-foreground: #f1f5f9;
+  --accent: #C9A227;
+  --accent-foreground: #0f172a;
   --muted: #64748b;
-  --muted-foreground: #f0fdf4;
-  
-  --card: #ffffff;
-  --card-foreground: #064e3b;
-  
-  --border: #d1fae5;
+  --muted-foreground: #f1f5f9;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-foreground: #f1f5f9;
+  --border: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {
@@ -34,28 +36,88 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
-  
-  --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+  --color-corporate-blue: #1E3A5F;
+  --color-accent-gold: #C9A227;
+  --color-finance-green: #8A6D1D;
+
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
 
-* {
-  border-color: var(--border);
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: rgba(201, 162, 39, 0.3);
+    color: #fff;
+  }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-}
+@layer components {
+  .glass-card {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 rounded-2xl;
+  }
 
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
+  .glass-dark {
+    backdrop-filter: blur(12px);
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-.glass-dark {
-  background: rgba(10, 25, 47, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  .glass {
+    @apply backdrop-blur-md bg-white/5 border border-white/10;
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px -5px rgba(30, 58, 95, 0.6);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 20px -5px rgba(201, 162, 39, 0.5);
+  }
+
+  .glow-emerald {
+    box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.3);
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(135deg, #1E3A5F 0%, #1E3A5F 50%, #334155 100%);
+  }
+
+  .finance-gradient {
+    background: linear-gradient(135deg, #8A6D1D 0%, #C9A227 50%, #334155 100%);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #C9A227 0%, #f0d878 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #1E3A5F 0%, #60a5fa 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

@@ -1,46 +1,50 @@
 import type { Metadata } from 'next'
+import { Outfit } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-outfit',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'José Manuel Suárez | QA Automation Engineer / SDET & Security Tester',
+  title: 'Suarez Consultoría | IT, QA, Ciberseguridad, Redes y Telefonía',
   description:
-    'QA Automation Engineer / SDET con 3+ años de experiencia en test automation, API testing, E2E testing, regression testing e integration testing. Especialista en Playwright, Selenium, Postman, SQL, PostgreSQL, JavaScript, TypeScript, Python, CI/CD y GitHub Actions. Certificado eWPTX, eCPPT, eJPT, eSOC, eIAMA, CCNP y CompTIA AutoOps+.',
+    'Consultoría integral en QA Automation, ciberseguridad, soporte técnico IT, redes empresariales, WiFi y telefonía IP. Cobertura nacional en República Dominicana y soporte remoto internacional.',
   keywords: [
-    'QA Automation Engineer', 'SDET', 'API Testing', 'End-to-End Testing',
-    'Automated Testing', 'TypeScript', 'JavaScript', 'Python', 'CI/CD',
-    'GitHub Actions', 'Software Testing', 'Regression Testing',
-    'Integration Testing', 'PostgreSQL', 'SQL', 'Git', 'Linux', 'FastAPI',
-    'Next.js', 'Security Testing', 'OWASP', 'Playwright', 'Selenium',
-    'Postman', 'José Manuel Suárez', 'JMTechLab', 'República Dominicana',
-    'Remote QA Engineer'
+    'QA Automation', 'Ciberseguridad', 'Soporte IT', 'Redes empresariales', 'WiFi empresarial',
+    'Telefonía IP', 'VoIP', 'Active Directory', 'Servidores', 'Pentesting', 'ISO 27001',
+    'Playwright', 'Selenium', 'API Testing', 'SDET', 'República Dominicana', 'Santo Domingo',
+    'Suarez Consultoría', 'JMTechLab', 'Outsourcing IT', 'MSP'
   ],
-  authors: [{ name: 'José Manuel Suárez', url: 'https://jmtechlab.do' }],
+  authors: [{ name: 'José Manuel Suárez', url: 'https://consultoria.jmtechlab.do' }],
   creator: 'José Manuel Suárez',
-  publisher: 'JMTechLab',
+  publisher: 'Suarez Consultoría',
   metadataBase: new URL('https://consultoria.jmtechlab.do'),
   openGraph: {
-    title: 'José Manuel Suárez | QA Automation Engineer / SDET',
+    title: 'Suarez Consultoría | IT, QA, Ciberseguridad, Redes y Telefonía',
     description:
-      'QA Automation Engineer / SDET especializado en Playwright, Selenium, API Testing, SQL, CI/CD y Security Testing. 3+ años de experiencia, 19+ certificaciones.',
+      'Servicios integrales de IT: QA Automation, ciberseguridad, soporte técnico, redes, WiFi empresarial y telefonía IP.',
     url: 'https://consultoria.jmtechlab.do',
-    siteName: 'JMTechLab',
+    siteName: 'Suarez Consultoría',
     locale: 'es_DO',
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'José Manuel Suárez | QA Automation Engineer / SDET',
-    description:
-      'QA Automation Engineer / SDET especializado en Playwright, Selenium, API Testing, SQL, CI/CD y Security Testing.'
+    title: 'Suarez Consultoría | IT, QA, Ciberseguridad, Redes y Telefonía',
+    description: 'Servicios integrales de IT, QA, ciberseguridad, redes y telefonía IP.'
   },
   robots: { index: true, follow: true }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es">
-      <body>
+    <html lang="es" className={outfit.variable}>
+      <body className={outfit.className}>
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
